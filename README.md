@@ -48,29 +48,6 @@ gymcontrol/
 
 ---
 
-## Como compilar
-
-### Linux / macOS
-```bash
-cd src
-
-gcc -Wall -std=c99 \
-  main.c server.c routes.c json_parser.c \
-  utils.c alunos.c professores.c turmas.c fichas.c agenda.c \
-  -o ../gymcontrol
-```
-
-### Windows (MinGW / Git Bash)
-```cmd
-cd src
-
-gcc -Wall -std=c99 ^
-  main.c server.c routes.c json_parser.c ^
-  utils.c alunos.c professores.c turmas.c fichas.c agenda.c ^
-  -o ../gymcontrol.exe -lws2_32
-```
-
----
 
 ## Como executar
 
@@ -103,39 +80,8 @@ O C nunca toca em HTML. O HTML nunca toca nos dados diretamente.
 
 ---
 
-## Rotas da API C
 
-| Método | Rota | Ação |
-|--------|------|------|
-| GET | /api/alunos | Lista todos |
-| GET | /api/alunos?id=N | Busca por ID |
-| GET | /api/alunos?turma=N | Filtra por turma |
-| POST | /api/alunos | Cadastra novo |
-| PUT | /api/alunos?id=N | Edita |
-| DELETE | /api/alunos?id=N | Remove |
-| GET | /api/professores | Lista todos |
-| POST | /api/professores | Cadastra |
-| PUT | /api/professores?id=N | Edita |
-| DELETE | /api/professores?id=N | Remove |
-| GET | /api/turmas | Lista com vagas calculadas |
-| POST | /api/turmas | Cadastra |
-| PUT | /api/turmas?id=N | Edita |
-| DELETE | /api/turmas?id=N | Remove |
-| GET | /api/fichas | Lista todas |
-| GET | /api/fichas?aluno=N | Fichas de um aluno |
-| POST | /api/fichas | Cadastra |
-| DELETE | /api/fichas?id=N | Remove |
-| GET | /api/agenda | Lista toda agenda |
-| GET | /api/agenda?data=DD/MM/AAAA | Por data |
-| GET | /api/agenda?professor=N | Por professor |
-| POST | /api/agenda | Agenda aula |
-| PUT | /api/agenda?id=N | Edita / marca realizada |
-| DELETE | /api/agenda?id=N | Remove |
-| GET | /api/dashboard | Totais gerais |
-
----
-
-## Arquitetura (resumo para o trabalho)
+## Arquitetura
 
 ```
 ┌─────────────────────┐        HTTP/JSON        ┌──────────────────────────┐
